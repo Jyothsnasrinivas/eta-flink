@@ -1,11 +1,11 @@
 {-# LANGUAGE OverloadedStrings #-}
+
 module Main where
 
 import Java
 import Types
 import Prelude hiding (sum)
 import Control.Monad (forM_, when)
--- import Interop.Java.StringUtils
 import qualified Interop.Java.StringUtils as JS
 
 main :: IO ()
@@ -15,7 +15,6 @@ main = java $ do
     counts <- sampleData <.> flatMap (mkFlatMap lineSplitter)
                 >- returns "Tuple2<String,Integer>"
                 >- groupBy (toJava [0 :: Int])
-                >- returns "int.."
                 >- (aggregate sum 1)
     counts <.> printFlink
     counts <.> writeAsText "output.txt" >- setParallelism 1

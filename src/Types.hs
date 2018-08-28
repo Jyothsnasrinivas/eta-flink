@@ -31,9 +31,6 @@ foreign import java unsafe flatMap :: (t <: Object, r <: Object, a <: DataSet t)
 foreign import java unsafe groupBy
     :: (t <: Object, a <: DataSet t) => JIntArray -> Java a (UnsortedGrouping t)
 
--- foreign import java unsafe aggregate
---     :: (a <: DataSet t) => Aggregations -> Int -> Java a (AggregateOperator t)
-
 foreign import java unsafe "count" countFlink :: (a <: DataSet t) => Java a ()
 
 foreign import java unsafe "print" printFlink :: (a <: DataSet t) => Java a ()
@@ -80,8 +77,6 @@ data Grouping t = Grouping (@org.apache.flink.api.java.operators.Grouping t)
 data Aggregations = Aggregations @org.apache.flink.api.java.aggregation.Aggregations
     deriving Class
 
--- type instance Inherits Aggregations = '[Enum Aggregations]
-
 foreign import java unsafe
   "@static @field org.apache.flink.api.java.aggregation.Aggregations.SUM"
   sum :: Aggregations
@@ -123,3 +118,4 @@ type instance Inherits (SingleInputUdfOperator t out o) = '[Operator out o]
 
 foreign import java unsafe returns :: (a <: SingleInputUdfOperator t out o, o <: SingleInputUdfOperator t out o)
   => JString -> Java a o
+---
