@@ -18,7 +18,7 @@ maven-depends:       org.apache.flink:flink-java:1.2.1, org.apache.flink:flink-c
 
 The sample text is in the `input.txt` file.
 
-Afterall, we will see results of the Word Count in console and the `output.txt` that is generated.
+We can see results of the Word Count in console and the `output.txt` that is generated.
 
 ## Running the sample
 
