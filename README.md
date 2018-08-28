@@ -1,6 +1,8 @@
 
 <h1 align="center">Apache Flink example in Eta</h1>
 
+**Note that this example is not using the [Direct Java Interop](https://github.com/typelead/eta/issues/647) feature and I've manually written the FFI imports for now. A better example is yet to come ;)**
+
 [Apache Flink](https://flink.apache.org/) is a Big Data processing framework that allows programmers to process the vast amount of data in a very efficient and scalable manner.
 
 This is a simple WordCount example in Eta.
