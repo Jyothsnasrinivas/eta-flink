@@ -48,4 +48,4 @@ You will notice the following log in the console.
 
 **Credits**
 
-This example is inspired from the [Apache Flink Example](http://10minbasics.com/apache-flink-hello-world-java-example/) .
+This example is inspired from the [Apache Flink Java Example](http://10minbasics.com/apache-flink-hello-world-java-example/) .
